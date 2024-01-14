@@ -6,15 +6,6 @@ from rest_framework import serializers
 from .models import Restaurant, Visit
 
 
-# class RestaurantSerializer(serializers.ModelSerializer):
-#     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
-
-#     class Meta:
-#         model = Restaurant
-#         depth = 1
-#         fields = ("user", "name", "place", "type", "visit")
-
-
 class RestaurantSerializer(serializers.ModelSerializer):
     user = serializers.HiddenField(default=serializers.CurrentUserDefault())
     average_expense = serializers.SerializerMethodField()

@@ -5,7 +5,6 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Restaurant
 from .serializers import (
     RestaurantSerializer,
-    # RestaurantAvgInfoSerializer,
     VisitCreateSerializer,
     UserCreateSerializer,
 )
