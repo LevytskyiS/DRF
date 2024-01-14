@@ -33,3 +33,5 @@ PORT=5432
 10. Change HOST=localhost to HOST=postgres, so there will be a bridge between django application and postgres
 11. Run 'docker compose up -d'
 12. Check Swagger - 'http://127.0.0.1:8000/swagger/ (if you want to try it out, you should use Postman or Django login, cause the access token is not recognized for some reason by Swagger)
+13. The application is launched on server already and you can also check the swagger and other API urls under the link below: 
+http://207.154.244.142:8001/swagger/ 
