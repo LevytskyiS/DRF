@@ -1,0 +1,73 @@
+1. api/v1/registration/
+POST; 
+body 
+{
+    "first_name": "kek",
+    "last_name": "lol",
+    "username": "client2",
+    "password": "client2",
+    "email": "qwe@asdasd.com"
+}
+
+2. api/v1/token/
+POST; 
+body 
+{
+    "username": "name",
+    "password": "password"
+}
+
+3. api/v1/token/refresh/
+POST; 
+body {
+    "refresh": "your refresh token"
+}
+
+4. api/v1/restaurant_create/
+POST;
+Authorization - Bearer Token;
+body {
+    "name": "restaurant name",
+    "place": "restaurant location",
+    "type": "cuisine"
+}
+
+OPTION 1
+5. api/v1/restaurant_list/
+GET;
+Authorization - Bearer Token;
+
+6. api/v1/restaurant_detail/<int:pk>/
+GET; 
+PUT -> body {
+    "user":1,
+    "name":"new name",
+    "place":"new place",
+    "type":"cuisine"} 
+DELETE;
+Authorization - Bearer Token;
+
+OPTION 2
+7. api/v1/restaurant/
+GET;
+Authorization - Bearer Token;
+
+8. api/v1/restaurant/<int:pk>/
+GET; 
+PUT -> body {
+    "user":1,
+    "name":"new name",
+    "place":"new place",
+    "type":"cuisine"} 
+DELETE;
+Authorization - Bearer Token;
+
+9. api/v1/visit_create/
+PUT;
+body {
+    "restaurant": restaurant_id,
+    "expense": 20,
+    "note": "Not bad",
+    "evaluation": 4
+}
+Authorization - Bearer Token;

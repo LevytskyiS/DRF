@@ -38,12 +38,16 @@ router.register(r"restaurant", RestaurantViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/registration/", UserCreateAPIView.as_view()),
+    # JWT Token
+    path("api/v1/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("api/v1/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/v1/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
     # Restaurant
     path("api/v1/restaurant_create/", RestaurantCreateAPIView.as_view()),
     # Option 1
     path("api/v1/restaurant_list/", RestaurantListAPIView.as_view()),
     path(
-        "api/v1/restaurant_detail/<int:pk>",
+        "api/v1/restaurant_detail/<int:pk>/",
         RestaurantRetrieveUpdateDestroyAPIView.as_view(),
     ),
     # Option 2
@@ -62,8 +66,4 @@ urlpatterns = [
     ),
     # Visit
     path("api/v1/visit_create/", VisitCreateAPIView.as_view()),
-    # JWT Token
-    path("api/v1/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path("api/v1/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("api/v1/token/verify/", TokenVerifyView.as_view(), name="token_verify"),
 ]
