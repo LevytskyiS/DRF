@@ -2,8 +2,8 @@
 POST; 
 body 
 {
-    "first_name": "kek",
-    "last_name": "lol",
+    "first_name": "name",
+    "last_name": "surname",
     "username": "client2",
     "password": "client2",
     "email": "qwe@asdasd.com"
@@ -36,9 +36,14 @@ OPTION 1
 5. api/v1/restaurant_list/
 GET;
 Authorization - Bearer Token;
+optional - body {
+    "YYYY-MM-DD"
+}
 
 6. api/v1/restaurant_detail/<int:pk>/
-GET; 
+GET -> optional - body {
+    "YYYY-MM-DD"
+}; 
 PUT -> body {
     "user":1,
     "name":"new name",
