@@ -31,6 +31,7 @@ class Restaurant(models.Model):
 
         if not expenses:
             return 0
+
         return Decimal(str(sum(expenses))) / Decimal(str(len(expenses)))
 
     def get_average_evaluation(self, *args):
